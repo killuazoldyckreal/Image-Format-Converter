@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Editor</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h2 class="header">Media Editor</h2>
+    <p class="sub-header">Save/Convert photo files in your custom formats</p>
+
+    <label for="media" class="label">Choose your media</label>
+    <select id="media" class="dropdown"></select>
+
+    <button id="save-original" class="btn-save">Save as Original</button>
+
+    <label for="convert-to" class="label">Convert to</label>
+    <select id="convert-to" class="dropdown">
+      <option value="jpeg">JPEG</option>
+      <option value="png">PNG</option>
+      <option value="gif">GIF</option>
+      <option value="bmp">BMP</option>
+      <option value="webp">WebP</option>
+      <option value="apng">APNG</option>
+    </select>
+
+    <button id="save-converted" class="btn-save">Save Converted</button>
+
+    <h3 class="preview-header">Preview</h3>
+    <img id="media-preview" class="preview-image" src="#" alt="Preview will appear here">
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

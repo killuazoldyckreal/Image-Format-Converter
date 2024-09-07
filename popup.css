@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+.container {
+    width: 300px;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.header {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.sub-header {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.label {
+    font-size: 14px;
+    color: #555;
+    margin: 8px 0;
+    display: block;
+    text-align: left;
+}
+
+.dropdown {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #eef1f5;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 12px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.dropdown:hover {
+    background-color: #dfe6ed;
+}
+
+.btn-save, .btn-convert {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4c9ffd;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-save:hover, .btn-convert:hover {
+    background-color: #347ed9;
+}
+
+.btn-save:active, .btn-convert:active {
+    background-color: #2868b5;
+}
+
+.preview-header {
+    font-size: 16px;
+    color: #444;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.preview-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+button,
+select,
+img {
+    transition: all 0.3s ease;
+}
