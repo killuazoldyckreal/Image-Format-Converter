@@ -38,10 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedImage = mediaSelect.value;
     if (selectedImage) {
       chrome.runtime.sendMessage({ image: selectedImage, format: null }, (response) => {
-        if (response.success) {
-          console.log('Image saved successfully.');
+        if (response) {
+          if (response.success) {
+            console.log('Image saved successfully.');
+          } else {
+            console.error('Error saving file:', response.error);
+          }
         } else {
-          console.error('Error saving file:', response.error);
+          console.error('No response received.');
         }
       });
     } else {
@@ -57,18 +61,26 @@ document.addEventListener('DOMContentLoaded', () => {
       const currentFormat = selectedImage.split('.').pop().toLowerCase();
       if (currentFormat === convertTo) {
         chrome.runtime.sendMessage({ image: selectedImage, format: null }, (response) => {
-          if (response.success) {
-            console.log('Image saved successfully.');
+          if (response) {
+            if (response.success) {
+              console.log('Image saved successfully.');
+            } else {
+              console.error('Error saving file:', response.error);
+            }
           } else {
-            console.error('Error saving file:', response.error);
+            console.error('No response received.');
           }
         });
       } else {
         chrome.runtime.sendMessage({ image: selectedImage, format: convertTo }, (response) => {
-          if (response.success) {
-            console.log('Image converted and saved successfully.');
+          if (response) {
+            if (response.success) {
+              console.log('Image converted and saved successfully.');
+            } else {
+              console.error('Error saving file:', response.error);
+            }
           } else {
-            console.error('Error saving file:', response.error);
+            console.error('No response received.');
           }
         });
       }
