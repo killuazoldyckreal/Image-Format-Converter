@@ -64,9 +64,12 @@ function convertImageInPage(imageUrl, format) {
 }
 
 function downloadImage(imageUrl) {
-  const originalFilename = new URL(imageUrl).pathname.split('/').pop();
-  const link = document.createElement('a');
-  link.href = imageUrl;
-  link.download = originalFilename;
-  link.click();
+  chrome.downloads.download({ url: imageUrl }, (downloadId) => {
+    if (chrome.runtime.lastError) {
+      console.error('Download failed:', chrome.runtime.lastError);
+    } else {
+      console.log('Download started with ID:', downloadId);
+    }
+  });
 }
+
