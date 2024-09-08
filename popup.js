@@ -7,6 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const MAX_FILENAME_LENGTH = 19;
 
+  chrome.storage.local.get('selectedImage', (data) => {
+    if (data.selectedImage) {
+      const imageUrl = data.selectedImage;
+      const fileName = getFileName(imageUrl);
+      if (fileName) {
+        const option = document.createElement('option');
+        option.value = imageUrl;
+        option.text = trimFileName(fileName, MAX_FILENAME_LENGTH);
+        mediaSelect.appendChild(option);
+        mediaSelect.value = imageUrl;
+        previewImage.src = imageUrl;
+      }
+    }
+  });
+
   chrome.tabs.query({
     active: true,
     currentWindow: true

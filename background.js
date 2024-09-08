@@ -1,3 +1,19 @@
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.contextMenus.create({
+    id: "convertMediaEditor",
+    title: "Convert using Media Editor",
+    contexts: ["image"],
+  });
+});
+
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+  if (info.menuItemId === "convertMediaEditor") {
+    chrome.storage.local.set({ selectedImage: info.srcUrl }, () => {
+      chrome.action.openPopup();
+    });
+  }
+});
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   const { image, format } = message;
 
@@ -72,4 +88,3 @@ function downloadImage(imageUrl) {
     }
   });
 }
-

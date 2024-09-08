@@ -9,6 +9,7 @@ The Media Editor Chrome Extension allows users to save and convert photo files i
 - **Save Original Media**: Save selected media files in their original format.
 - **Convert Media**: Convert media files to various formats, including JPEG, PNG, GIF, BMP, WebP, and APNG.
 - **Preview Media**: View a preview of the selected media file before saving or converting.
+- **Context Menu Integration**: Right-click on any image in the browser and select "Convert using Media Editor" to load it into the extension for conversion.
 
 ## Installation
 
@@ -21,6 +22,7 @@ The Media Editor Chrome Extension allows users to save and convert photo files i
 
 1. **Choose Media**:
    - Use the dropdown menu to select the media file you want to work with.
+   - Alternatively, right-click on any image in the browser and choose "Convert using Media Editor" to load it directly into the extension.
 
 2. **Save Original**:
    - Click the "Save as Original" button to save the selected media in its original format.
